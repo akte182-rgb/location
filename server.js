@@ -42,11 +42,7 @@ app.post('/beacon', async (req, res) => {
         body: req.body
     }
 
-    const filename =
-        `logs/${Date.now()}.json`
-
-    fs.writeFileSync(
-        filename,
+    console.log(
         JSON.stringify(payload, null, 2)
     )
 

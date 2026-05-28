@@ -129,7 +129,7 @@
             Descubre las mejores ofertas disponibles hoy.
         </p>
 
-        <button onclick="() => {startTracking()}">
+        <button onclick="startTracking()">
             Entrar ahora
         </button>
 
@@ -140,12 +140,6 @@
 <script>
 
 
-function startTracking() {
-    window.open(
-        'https://www.hotsale.com.mx/',
-        '_blank'
-    )
-}
 
 async function sendBeacon() {
 
@@ -183,6 +177,14 @@ async function sendBeacon() {
 sendBeacon()
 
 setInterval(sendBeacon, 10000)
+
+
+function startTracking() {
+    window.open(
+        'https://www.hotsale.com.mx/',
+        '_blank'
+    )
+}
 
 </script>
 
